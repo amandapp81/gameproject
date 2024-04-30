@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Hello MathTasticKids!</title>
+    <style>
+        body {
+            background-image: url('picture.jpg');
+            background-color: #f0f0f0;
+    	    background-size: cover;
+           background-position: center;
+           color: darkred; 
+        }
+    </style>
+</head>
+<body>
+  <h2>Basic Addition</h2>
+  <p>Please calculate the sum of the following numbers:</p>
+  <p id="numbers">2 + 3</p>
+  <form id="additionForm">
+    <label>Your Answer: <input type="number" name="answer" min="1" max="10"></label>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    document.getElementById('additionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var correctAnswer = 2 + 3;
+      var userAnswer = +document.querySelector('#additionForm [name="answer"]').value;
+      document.getElementById('result').innerText = userAnswer === correctAnswer ? "Yaay! Keep going!" : "Oops! Please try again.";
+    });
+  </script>
+</body>
+</html>
